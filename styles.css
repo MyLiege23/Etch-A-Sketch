@@ -1,0 +1,11 @@
+body {
+  background-color: lightblue;
+}
+
+.drawing-pad {
+  border: 1rem;
+}
+
+.grid {
+  display: grid;
+}
