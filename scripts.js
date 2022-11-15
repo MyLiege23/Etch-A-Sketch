@@ -1,5 +1,5 @@
 //input variables
-let color = "black";
+let color = "red";
 let padSize = 100;
 
 const drawingPad = document.querySelector(".drawing-pad");
@@ -9,7 +9,7 @@ for (r = 0; r < padSize; r++) {
   for (c = 0; c < padSize; c++) {
     let tile = document.createElement("div");
     tile.classList.add(`tile${r}${c}`);
-    tile.classList.add('tile');
+    tile.classList.add("tile");
     drawingPad.appendChild(tile);
   }
 }
@@ -22,5 +22,5 @@ tiles.forEach((tile) => {
 });
 
 const colorTile = (tile) => {
-  tile.setAttribute('style', 'background-color: black;');
+  tile.setAttribute("style", `background-color: ${color};`);
 };
