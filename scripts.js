@@ -1,17 +1,26 @@
-let drawingPad = document.querySelector(".drawing-pad");
-let padSize = 16;
-//drawingPad.setAttribute('style', `grid-template-columns: repeat(${padSize}}, 1fr)`)
-//line 3 doesn't seem to do what I want it to do.
+//input variables
+let color = "black";
+let padSize = 100;
 
-for (i = 0; i < padSize; i++) {
-  let tileRow = document.createElement("div");
-  tileRow.classList.add("tile-row");
-  drawingPad.appendChild(tileRow);
-  console.log("abc");
-  for (j = 0; j < padSize; j++) {
+const drawingPad = document.querySelector(".drawing-pad");
+drawingPad.style.gridTemplateColumns = `repeat(${padSize}, 1fr)`;
+
+for (r = 0; r < padSize; r++) {
+  for (c = 0; c < padSize; c++) {
     let tile = document.createElement("div");
-    tile.classList.add("tile");
-    console.log("def");
-    tileRow.appendChild(tile);
+    tile.classList.add(`tile${r}${c}`);
+    tile.classList.add('tile');
+    drawingPad.appendChild(tile);
   }
 }
+
+let tiles = Array.from(document.querySelectorAll(".tile"));
+tiles.forEach((tile) => {
+  tile.addEventListener("pointerover", () => {
+    colorTile(tile);
+  });
+});
+
+const colorTile = (tile) => {
+  tile.setAttribute('style', 'background-color: black;');
+};

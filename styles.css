@@ -3,9 +3,12 @@ body {
 }
 
 .drawing-pad {
+  display: grid;
   border: 1rem;
+  width: 100%;
+  aspect-ratio: 1;
 }
 
-.grid {
-  display: grid;
+.tile {
+  background-color: white;
 }
